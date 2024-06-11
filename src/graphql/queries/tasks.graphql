@@ -1,0 +1,43 @@
+query FindAllTasks($creatorId: ID!) {
+  findAllTasks(creatorId: $creatorId) {
+    _id
+    title
+    detail
+    createdAt
+    subtasks {
+        detail
+        completed
+      }
+    createdBy {
+      _id
+      first_name
+      last_name
+    }
+    clientAdminRef {
+    _id  
+    }
+  }
+}
+
+query FindTaskById($findTaskByIdId: ID!) {
+  findTaskById(id: $findTaskByIdId) {
+    _id
+    title
+    facility
+    detail
+    media
+    createdAt
+    subtasks {
+        detail
+        completed
+      }
+    createdBy {
+      _id
+      first_name
+      last_name
+    }
+    clientAdminRef {
+    _id  
+    }
+  }
+}

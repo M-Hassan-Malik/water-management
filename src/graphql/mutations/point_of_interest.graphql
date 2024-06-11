@@ -1,0 +1,26 @@
+# Add
+mutation AddPointOffInterest($pointOfInterestInput: PointOfInterestInput!) {
+  addPointOffInterest(pointOfInterestInput: $pointOfInterestInput) {
+    status
+    message
+    data
+  }
+}
+
+# Update
+mutation UpdatePointOffInterest($updatePointOfInterestInput: UpdatePointOfInterestInput!) {
+  updatePointOffInterest(updatePointOfInterestInput: $updatePointOfInterestInput) {
+    status
+    message
+    data
+  }
+}
+
+# Delete
+mutation DeletePointOffInterest($id: ID!) {
+  deletePointOffInterest(_id: $id) {
+    status
+    message
+    data
+  }
+}

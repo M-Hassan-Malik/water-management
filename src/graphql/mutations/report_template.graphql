@@ -1,0 +1,49 @@
+mutation AddReportTemplate($reportTemplateInput: ReportTemplateInput!) {
+  addReportTemplate(reportTemplateInput: $reportTemplateInput) {
+    data
+    message
+    status
+  }
+}
+
+mutation UpdateReportTemplate($updateReportTemplateInput: UpdateReportTemplateInput!) {
+  updateReportTemplate(updateReportTemplateInput: $updateReportTemplateInput) {
+    _id
+    name
+    fields {
+      _id
+      type
+      label
+      placeholder
+      options
+    }
+    created_by
+    clientAdminRef
+  }
+}
+
+mutation AssignReportTemplate($assignReportTemplateInput: AssignInput!) {
+  assignReportTemplate(assignReportTemplateInput: $assignReportTemplateInput)
+}
+
+# Delete
+mutation DeleteReportTemplate($templateId: ID!) {
+  deleteReportTemplate(templateId: $templateId){
+    data
+    message
+    status
+  }
+}
+
+mutation ApproveReportSubmission($submissionId: ID!, $assignedReportId: ID!, $approverId: ID!) {
+  approveReportSubmission(submissionId: $submissionId, assignedReportId: $assignedReportId, approverId: $approverId) {
+    status
+    message
+    data
+  }
+}
+
+# Evaluate result of VAT report
+mutation EvaluateVAT($evaluateVatInput: EvaluateVatInput!) {
+  evaluateVAT(evaluateVatInput: $evaluateVatInput)
+}

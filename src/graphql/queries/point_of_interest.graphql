@@ -1,0 +1,13 @@
+# Get Facility's Points Of Interest
+query GetPointsOfInterest($facilityId: ID!) {
+  getPointsOfInterest(facilityId: $facilityId) {
+    _id
+    createdByRef
+    belongsToFacilityRef {
+      _id
+    }
+    type
+    name
+    points
+  }
+}

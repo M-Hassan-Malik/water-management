@@ -1,0 +1,12 @@
+mutation CreateActivityLog($activityLogInput: ActivityLogInput!) {
+  createActivityLog(activityLogInput: $activityLogInput) {
+    _id
+    user_name
+    role
+    interface
+    activity
+    dateTime
+    belongsTo
+    user_id
+  }
+}

@@ -1,0 +1,64 @@
+query GetUserTrainingSession($getUserTrainingSessionInput: GetUserTrainingSessionInput!) {
+  getUserTrainingSession(getUserTrainingSessionInput: $getUserTrainingSessionInput) 
+  {
+    _id
+    title
+    status
+    scheduleType
+     sessions {
+      date
+      status
+      session {
+        image {
+          complete
+          data
+        }
+        detail
+        video {
+          data
+          complete
+        }
+      }
+    }
+    userRef {
+    _id
+    first_name
+    last_name  
+    }
+  }
+}
+
+query GetAssignedTrainingById($taskId: ID!) {
+  getAssignedTrainingById(taskId: $taskId) {
+    _id
+    title
+    sessions {
+      date
+      status
+      session {
+        _id
+        detail
+        image {
+          complete
+          data
+        }
+        video {
+          complete
+          data
+        }
+      }
+    }
+    userRef {
+     _id
+     first_name
+     last_name
+     photo_url 
+    }
+    scheduleType
+    priority
+    assignedToFacilityRef {
+      _id
+      facility
+    }
+  }
+}

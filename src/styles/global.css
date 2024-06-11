@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;900&display=swap");
+/* @import '~quill/dist/quill.core.css'; */
+/* @import '~quill/dist/quill.bubble.css'; */
+@import "~quill/dist/quill.snow.css";
+
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+
+* {
+  transition: all 0.3s ese;
+}
+
+/* ------------- sidebar scroll bar start ------------- */
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 100vh 0 0 100vh;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.sidebar-main:hover .scrollbar::-webkit-scrollbar-thumb {
+  width: 10px;
+  height: 10px;
+  background: var(--chakra-colors-blue-500);
+  /* background: #658cd27d; */
+  /* background: #436cb87d; */
+  /* background: #f2ac61; */
+}
+
+.sidebar-main-wrapper-before:before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  width: 800px;
+  height: 100vh;
+  background-color: var(--chakra-colors-black-900);
+}
+
+/* ------------- sidebar scroll bar end ------------- */
+.attachment-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+* {
+  letter-spacing: 0.3px;
+  /* transition: all 0.3s ease; */
+}
+
+svg,
+span {
+  transition: all 0.1s ease;
+}
+
+a:hover {
+  border: none;
+}
+
+.checkbox-switch svg {
+  opacity: 0;
+  color: var(--chakra-colors-blue-900);
+}
+
+input[type="file"]::after {
+  position: absolute;
+  content: "";
+  width: 425px;
+  height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  left: 0px;
+  top: 0;
+}
+
+td::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+}
+
+td::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0;
+}
+
+td::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.action-buttons span {
+  margin-right: 0;
+}
+
+.checkboxes label {
+  margin-left: 0 !important;
+}
+
+.checkboxes div {
+  color: var(--chakra-colors-white) !important;
+}
+
+label.chakra-radio span {
+  /* color: #000; */
+  font-size: 12px;
+}
+
+/* .orange-scrollbar label.chakra-radio span {
+  color: #000;
+} */
+
+.orange-scrollbar::-webkit-scrollbar,
+.red-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 20px;
+}
+
+.orange-scrollbar::-webkit-scrollbar-track,
+.red-scrollbar::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: var(--chakra-colors-gray-200);
+}
+
+.orange-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 35px !important;
+  /* background-color: #f2ac61; */
+  background-color: var(--chakra-colors-orange-500);
+  /* -webkit-box-shadow: 0px 0px 10px #fc9c48;
+  -moz-box-shadow: 0px 0px 10px #fc9c48;
+  box-shadow: 0px 0px 10px #fc9c48; */
+}
+
+.red-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 35px !important;
+  /* background-color: #f26161; */
+  background-color: var(--chakra-colors-red-400);
+}
+
+.chakra-image {
+  width: 100%;
+  height: 100%;
+}
+
+.slot-cross-icon:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: #e765652e;
+  /* var(--chakra-colors-orange-500) */
+  transition: all 0.3s ease;
+}
+
+.slot-cross-icon:hover:before {
+  width: 100%;
+}
+
+/* class="chakra-slide chakra-modal__content css-itc4ne" */
+
+.chakra-slide div.duration-300.ease-out {
+  background-color: #2a2a2a96;
+}
+
+.charts-main {
+  flex-direction: row;
+}
+
+.charts-main .chart-box {
+  width: 49%;
+  /* min-height: 350px; */
+  min-height: 240px;
+}
+
+.map-wrapper .leaflet-container {
+  min-height: 50vh;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .charts-main {
+    flex-direction: column;
+  }
+
+  .charts-main .chart-box {
+    width: 100%;
+    min-height: 260px;
+  }
+
+  /* #top_menu {
+    display: none;
+  } */
+}
+
+/* my tester classes start */
+.b1 {
+  border: 1px solid red;
+}
+
+.b2 {
+  border: 1px solid green;
+}
+
+.b3 {
+  border: 1px solid blue;
+}
+
+.b4 {
+  border: 1px solid orange;
+}
+
+.b5 {
+  border: 1px solid purple;
+}
+
+.b6 {
+  border: 1px solid maroon;
+}
+
+.b7 {
+  border: 1px solid orangered;
+}
+
+.b8 {
+  border: 1px solid sienna;
+}
+
+/* my tester classes end */
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-left-div {
+  background-image: url("../assets/images/bg/gb.svg");
+  background-repeat: no-repeat;
+  /* background-size: 100% 90%; */
+  background-size: cover;
+  /* background-position: bottom left; */
+  background-position: 0 -30px;
+}
+
+video {
+  max-height: 100%;
+}
+
+.select-field option {
+  color: #000;
+}
+
+.phone-input input {
+  outline: none;
+}
+
+option {
+  color: #000;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 4px rgba(0, 0, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 13px rgba(0, 0, 255, 0.9);
+  }
+
+  100% {
+    box-shadow: 0 0 4px rgba(0, 0, 255, 0.5);
+  }
+}
+
+.storage-main {
+  position: relative;
+}
+.storage-main:before {
+  position: absolute;
+  content: "";
+  width: 90%;
+  height: 5px;
+  z-index: 0;
+  top: 0;
+  box-shadow: 0px -19px 60px 29px rgba(0, 0, 0, 0.8);
+}
+/* chakra-radio__control css-v3txvn */
+div span.chakra-radio__control[data-checked][data-disabled] {
+  border-color: #d4d4d4;
+  background: #d4d4d4;
+  color: #718096;
+}
+
+div span.css-gu0q6r[data-disabled] {
+  background: #0000000a;
+  border-color: #00000008;
+}
+
+.leaflet-control-zoom-in span, .leaflet-control-zoom-out span {
+  color: #000;
+}
+
+.PhoneInput .PhoneInputInput { 
+  background-color: transparent;
+}
+
+.fff {
+  background-color: #f7fafc #00000005 #dfe3e7 #1d1d1d66 #efecea #cbd5e0 #a0aec0
+    #718096 #4a5568 #2d3748 #1a202c #ccc /* dark theme orange */ #1f1f1fd6
+    #363636d6 #4c4c4cd6 #636363d6 #7a7a7ad6 #919191d6 #848484d6 #acacac
+    /* dark theme */ #ecf5fd #c9c9c9 #c9c9c9 #a0a0a0 #a6a6a6 #7d7d7d
+    #666666#cccccc;
+}

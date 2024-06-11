@@ -1,0 +1,68 @@
+# The Locations of a specific user
+query UserLocations($userLocationsId: ID!, $filter: InputTableFilter) {
+  userLocations(id: $userLocationsId, filter: $filter) {
+    _id
+    city
+    facility
+    country
+    parkName
+    status
+    createdOn
+  }
+}
+
+# The Locations which are pending to be approved by Super Admin
+query RequestedLocations($filter: InputTableFilter) {
+  requestedLocations(filter: $filter) {
+    _id
+    city
+    country
+    facility
+    parkName
+    createdOn
+    status
+    action {
+      view
+    }
+  }
+}
+
+# Get Specific Pending Request By Id
+query GetLocationById($getLocationByIdId: ID!) {
+  getLocationById(id: $getLocationByIdId) {
+    country
+    state
+    city
+    facility
+    address
+    GPS {
+      lat
+      lng
+    }
+    active
+
+  }
+}
+
+# Get Geo Locations of Multiple Users acc. to their Super-ordinate
+query GetUserParks($userId: ID!, $filter: InputTableFilter) {
+  getUserParks(userId: $userId, filter: $filter) {
+    _id
+    userName
+    parkName
+    createdOn
+    status
+  }
+}
+
+# Get Client's Facilities
+query GetFacilities($userId: ID!, $filter: FacilityFilterInput) {
+  getFacilities(userId: $userId, filter: $filter) {
+    _id
+    facility
+    city
+    state
+    country
+    active
+  }
+}

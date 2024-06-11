@@ -1,0 +1,4 @@
+# Add Auth keys for fetching relavent pectora users from the facility
+mutation AddPectoraAuth($addPectoraAuthInput: AddPectoraAuthInput!) {
+  addPectoraAuth(addPectoraAuthInput: $addPectoraAuthInput)
+}

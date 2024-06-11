@@ -1,0 +1,38 @@
+query FindActivityLogByClientAdminId($belongsTo: ID!) {
+  findActivityLogByClientAdminId(belongsTo: $belongsTo) {
+    _id
+    activity
+    belongsTo
+    dateTime
+    interface
+    role
+    user_id
+    user_name
+  }
+}
+
+query FindActivityLogByUserId($userId: ID!) {
+  findActivityLogByUserId(user_id: $userId) {
+    _id
+    user_name
+    role
+    interface
+    activity
+    dateTime
+    belongsTo
+    user_id
+  }
+}
+
+query FindActivityLogById($findActivityLogByIdId: ID!) {
+  findActivityLogById(id: $findActivityLogByIdId) {
+    _id
+    user_name
+    role
+    interface
+    activity
+    dateTime
+    belongsTo
+    user_id
+  }
+}

@@ -1,0 +1,37 @@
+# Add Training In RD
+mutation AddTrainingSession($addTrainingSessionInput: AddTrainingSessionInput!) {
+  addTrainingSession(addTrainingSessionInput: $addTrainingSessionInput)
+  {
+    data
+    message
+    status
+  }
+}
+
+mutation UpdateTraining($updateTrainingInput: UpdateTrainingInput!) {
+  updateTraining(updateTrainingInput: $updateTrainingInput) {
+    status
+    message
+    data
+  }
+}
+
+# Delete Training Template By it's ID
+mutation DeleteTraining($trainingTemplateId: ID!) {
+  deleteTraining(trainingTemplateId: $trainingTemplateId) {
+    status
+    message
+    data
+  }
+}
+
+
+# Assign Training to internal and External Users/Employees
+mutation AssignTrainingSession($assignTrainingSessionInput: AssignTrainingSessionInput!) {
+  assignTrainingSession(assignTrainingSessionInput: $assignTrainingSessionInput)
+}
+
+# Assign In-Service Training to internal and External Users/Employees 
+mutation AssignInService($assignInServiceInput: AssignInServiceInput!) {
+  assignInService(assignInServiceInput: $assignInServiceInput)
+}

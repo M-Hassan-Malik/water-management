@@ -1,0 +1,15 @@
+# Create Stripe Customer
+mutation CreateStripeCustomer($email: String!) {
+  createStripeCustomer(email: $email) {
+    status
+    message
+    data
+  }
+}
+
+# Create Stripe Customer For Subscriber
+query GetClientSecretForSubscriber($amount: Float!) {
+  getClientSecretForSubscriber(amount: $amount) {
+    clientSecret
+  }
+}

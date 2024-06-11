@@ -1,0 +1,38 @@
+#Add To DB
+mutation AddEmailAndNotification(
+  $emailAndNotificationInput: AddEmailAndNotificationInput!
+) {
+  addEmailAndNotification(
+    emailAndNotificationInput: $emailAndNotificationInput
+  ) {
+    data
+    message
+    status
+  }
+}
+
+mutation EditEmailAndNotification(
+  $emailAndNotificationInput: EditEmailAndNotificationInput!
+) {
+  editEmailAndNotification(
+    emailAndNotificationInput: $emailAndNotificationInput
+  )
+}
+
+#Assign To Users
+mutation AssignEmailAndNotification(
+  $assignEmailAndNotificationInput: AssignEmailAndNotificationInput!
+) {
+  assignEmailAndNotification(
+    assignEmailAndNotificationInput: $assignEmailAndNotificationInput
+  )
+}
+
+#Assign To Users
+mutation MarkAsRead($objectId: ID!) {
+  markAsRead(objectId: $objectId)
+}
+
+mutation DeleteEmailAndNotification($notifId: ID!) {
+  deleteEmailAndNotification(notifId: $notifId)
+}

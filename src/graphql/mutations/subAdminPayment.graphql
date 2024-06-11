@@ -1,0 +1,15 @@
+mutation AddSubAdminPayment($subAdminInput: SubAdminPaymentInput!) {
+  addSubAdminPayment(subAdminInput: $subAdminInput) {
+    _id
+    user_id {
+      _id
+      first_name
+      last_name
+    }
+    package_type
+    subscription_date
+    last_payment_date
+    next_payment_date
+    current_status
+  }
+}

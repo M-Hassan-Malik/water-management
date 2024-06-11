@@ -1,0 +1,11 @@
+# Get Pectora Auth keys/credentials
+query GetPectoraAuth($facilityId: ID!) {
+  getPectoraAuth(facilityId: $facilityId) {
+    X_Auth_Id
+    X_Auth_Token
+  }
+}
+
+query GetPectoraAndAppUsers($facilityId: ID!) {
+  getPectoraAndAppUsers(facilityId: $facilityId)
+}

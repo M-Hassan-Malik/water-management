@@ -1,0 +1,70 @@
+#Find All Assigned Reports
+query FindAllReports($userId: ID!, $filter: InputTableFilter) {
+  findAllReports(userId: $userId, filter: $filter) {
+    _id
+    title
+    submissions {
+      _id
+      date
+      status
+      submitted_data
+    }
+    belongs_to {
+      _id
+    }
+    scheduleType
+    created_by {
+      _id
+      first_name
+      last_name
+    }
+    assignedTo {
+      _id
+      first_name
+      last_name
+    }
+    assignedToFacilityRef {
+      _id
+      facility
+    }
+    clientAdminRef
+    createdAt
+  }
+}
+
+
+#Find Specific Assigned Report
+query FindUserReportSubmissionById($reportId: ID!) {
+  findUserReportSubmissionById(reportId: $reportId) {
+    _id
+    title
+    reportType
+    scheduleType
+    submissions {
+      _id
+      date
+      status
+      submitted_data
+    }
+    belongs_to {
+      _id
+    }
+    created_by {
+      _id
+      first_name
+      last_name
+    }
+    assignedTo {
+      _id
+      first_name
+      photo_url
+      last_name
+    }
+     assignedToFacilityRef {
+      _id
+      facility
+    }
+    clientAdminRef
+    createdAt
+  }
+}

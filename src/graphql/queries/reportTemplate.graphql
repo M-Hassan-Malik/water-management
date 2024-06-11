@@ -1,0 +1,46 @@
+query FindAllReportTemplates($reportType: EReportType!, $filter: InputTableFilter, $createdById: ID) {
+  findAllReportTemplates(reportType: $reportType, filter: $filter, createdById: $createdById) {
+    _id
+    name
+    type
+    status
+    universalAccess
+    fields {
+      _id
+      type
+      label
+      placeholder
+      options
+      src
+      value
+    }
+    created_by
+    createdAt
+    clientAdminRef
+  }
+}
+
+query FindTemplateById($findTemplateByIdId: ID!) {
+  findTemplateById(id: $findTemplateByIdId) {
+    _id
+    name
+    status
+    universalAccess
+    facility {
+      _id
+      facility
+    }
+    type
+    fields {
+      _id
+      type
+      label
+      src
+      placeholder
+      options
+      value
+    }
+    created_by
+    clientAdminRef
+  }
+}

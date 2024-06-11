@@ -1,0 +1,61 @@
+query GetIncidentReportsForClientDashboardStats(
+  $userId: ID!
+  $filter: IncidentReportDashboardFilterInput
+) {
+  getIncidentReportsForClientDashboardStats(userId: $userId, filter: $filter) {
+    _id
+    dailyCounts
+  }
+}
+
+query GetClientDashboardStats($userId: ID!,$facilityId: ID!) {
+  getClientDashboardStats(userId: $userId, facilityId: $facilityId) {
+    usersCountAccordingFacility
+
+    taskPendingCount
+    taskCompletedCount
+    
+    reportPendingCount
+    reportCompletedCount
+    
+    trainingSessionCount
+  }
+}
+
+query GetSuperAdminDashboardStats($clientAdminId: ID!, $packageId: ID!) {
+  getSuperAdminDashboardStats(
+    clientAdminId: $clientAdminId
+    packageId: $packageId
+  ) {
+    accountsCount
+    newClientsOfCurrentMonth
+    facilityCount
+    usersCountAccordingClientAdmin
+    usersCountBySubscription
+    activeUsersCount
+  }
+}
+
+query GetAllClientAdmins {
+  getAllClientAdmins {
+    _id
+    first_name
+    last_name
+    email
+  }
+}
+
+query GetAllSubscriptions {
+  getAllSubscriptions {
+    _id
+    title
+    cost
+  }
+}
+
+query GetAllParks {
+  getAllParks {
+    _id
+    name
+  }
+}

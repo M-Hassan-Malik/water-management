@@ -1,0 +1,14 @@
+# Get failed Vat Report from VAT_Link collection in Training Assign Screen
+query GetFailedVAT($facilityId: ID!) {
+  getFailedVAT(facilityId: $facilityId) {
+    _id
+    taskAssignedRef {
+      _id
+      title
+      detail
+      deadline
+      media
+    }
+    assignedToFacilityRef
+  }
+}

@@ -1,0 +1,62 @@
+query FindRole {
+  findRole {
+    _id
+    name
+    active
+    user_id
+    modules {
+      name
+      views
+    }
+    operations {
+      name
+      views
+    }
+  }
+}
+
+query FindRolesByUserId($findRolesByUserIdId: ID!, $facilityId: [ID])  {
+  findRolesByUserId(id: $findRolesByUserIdId, facilityId: $facilityId) {
+    _id
+    name
+    active
+    operations {
+      name
+      views
+    }
+    modules {
+         name
+      views
+    }
+    user_id
+  }
+}
+
+query ManageRolesListing($userId: ID!, $filter: InputTableFilter) {
+  manageRolesListing(userId: $userId, filter: $filter) {
+    _id
+    name
+    createdOn
+    activeUsers
+    status
+  }
+}
+
+# Find Role With Role's _id
+query FindRoleById($findRoleByIdId: ID!, $filter: ID) {
+  findRoleById(id: $findRoleByIdId, filter: $filter) {
+    _id
+    name
+    facility
+    active
+    operations {
+      name
+      views
+    }
+    modules {
+      name
+      views
+    }
+    user_id
+  }
+}

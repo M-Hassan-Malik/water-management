@@ -1,0 +1,65 @@
+# Crating Admin User
+mutation AddUserAdmin($signupInput: InputUser!) {
+  addUserAdmin(signupInput: $signupInput) {
+    _id
+    first_name
+    last_name
+    email
+    admin
+    active
+  }
+}
+
+# Crating Sub Admin & SubAdmin User
+mutation CreateSubAdmin($createSubAdminInput: InputSubAdmin!) {
+  createSubAdmin(createSubAdminInput: $createSubAdminInput)
+}
+
+# Creating client Admin for External Onboarding
+mutation RegisterClient($registerClientInput: InputRegisterClient!) {
+  registerClient(registerClientInput: $registerClientInput)
+}
+
+# Auth Login and return JWT
+mutation Login($loginInput: LoginInput!) {
+  login(loginInput: $loginInput) {
+    temporary_password
+    token
+    userType
+  }
+}
+
+# Forget password
+mutation forgetPassword($forgetPasswordInput: ForgetPasswordInput!) {
+  forgetPassword(forgetPasswordInput: $forgetPasswordInput)
+}
+
+# Reset password
+mutation ResetPassword($resetPasswordInput: ResetPasswordInput!) {
+  resetPassword(resetPasswordInput: $resetPasswordInput)
+}
+
+mutation ChangePassword($changePasswordInput: ChangePasswordInput!) {
+  changePassword(changePasswordInput: $changePasswordInput)
+}
+
+mutation UpdateEmail($updateEmailInput: UpdateEmailInput!) {
+  updateEmail(updateEmailInput: $updateEmailInput)
+}
+
+# Send OTP to Reset Password
+mutation VerifyOtp($verifyOtpInput: VerifyOTPInput!) {
+  verifyOtp(verifyOtpInput: $verifyOtpInput)
+}
+
+mutation UpdateTemporaryPassword($temporaryPasswordInput: TemporaryPasswordInput!) {
+  updateTemporaryPassword(temporaryPasswordInput: $temporaryPasswordInput) {
+    message
+    token
+  }
+}
+
+# Activate SubAdmin After He Has Purchased Subscription 
+mutation ActivateSubAdminAfterSubscription($userId: ID!) {
+  activateSubAdminAfterSubscription(user_id: $userId)
+}

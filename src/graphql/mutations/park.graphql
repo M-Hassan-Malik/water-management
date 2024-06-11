@@ -1,0 +1,4 @@
+# Add Mutiple/Another Location for The Park
+mutation AddAnotherLocation($parkLocationDataInput: ParkLocationDataInput!) {
+  addAnotherLocation(parkLocationDataInput: $parkLocationDataInput)
+}

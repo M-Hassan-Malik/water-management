@@ -1,0 +1,14 @@
+# Add Dept For Employee
+mutation AddDepartment($departmentInput: DepartmentInput!) {
+  addDepartment(departmentInput: $departmentInput)
+}
+
+# Update Dept For Employee
+mutation UpdateDepartment($departmentUpdateInput: DepartmentUpdateInput!) {
+  updateDepartment(departmentUpdateInput: $departmentUpdateInput)
+}
+
+# Delete Department From All Related Employees and from departments Collection
+mutation DeleteDepartment($departmentId: ID!) {
+  deleteDepartment(departmentId: $departmentId)
+}

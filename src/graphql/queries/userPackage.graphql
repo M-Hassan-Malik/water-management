@@ -1,0 +1,59 @@
+# Get all users with basic subscription details
+query TrackClientAdmins($filter: InputTableFilter) {
+  trackClientAdmins(filter: $filter) {
+    _id
+    first_name
+    last_name
+    package {
+      cost
+      title
+      createdAt
+    }
+    email
+  }
+}
+
+# Get particular user's basic subscription details
+query TrackParticularClientRecord($userId: ID!) {
+  trackParticularClientRecord(userId: $userId) {
+    _id
+    title
+    status
+    cost
+    createdAt
+    active
+     ref {
+      first_name
+      last_name
+      email
+    }
+  }
+}
+
+# Get Subscription details By Id
+query GetUserPackageModuleById($subscriptionId: ID!) {
+  getUserPackageModuleById(subscriptionId: $subscriptionId) {
+    _id
+    ref {
+      first_name
+      last_name
+      email
+    }
+    title
+    active
+    paid
+    cost
+    duration
+    paymentDetail {
+      method
+      amount
+    }
+    compare_at
+    discount
+    discount_type
+    description
+    number_of_users
+    status
+    createdAt
+  }
+}

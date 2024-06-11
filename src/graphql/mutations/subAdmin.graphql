@@ -1,0 +1,9 @@
+# Onboard Sub Admin
+mutation OnboardSubAdmin($subAdminOnboardInput: SubAdminOnboardInput!) {
+  onboardSubAdmin(subAdminOnboardInput: $subAdminOnboardInput)
+}
+
+# Update Sub Admins & Sub Admin Users
+mutation UpdateSubAdmin($updateSubAdminInput: UpdateSubAdminInput!) {
+  updateSubAdmin(updateSubAdminInput: $updateSubAdminInput)
+}

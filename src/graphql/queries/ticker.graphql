@@ -1,0 +1,8 @@
+# Post and Update Announcement
+query GetPost {
+  getPost {
+    status
+    message
+    data
+  }
+}

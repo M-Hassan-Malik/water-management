@@ -1,0 +1,8 @@
+# Post and Update Announcement
+mutation PostTicker($postTickerInput: PostTickerInput!) {
+  postTicker(postTickerInput: $postTickerInput) {
+    status
+    message
+    data
+  }
+}

@@ -1,0 +1,13 @@
+# Accepting The Location Request
+mutation AcceptLocationRequest($acceptLocationRequestId: ID!) {
+  acceptLocationRequest(id: $acceptLocationRequestId)
+}
+
+# Request for Facility Details Update
+mutation UpdateFacilityRequest($updateFacilityRequestInput: UpdateFacilityRequestInput!) {
+  updateFacilityRequest(updateFacilityRequestInput: $updateFacilityRequestInput) {
+    status
+    message
+    data
+  }
+}

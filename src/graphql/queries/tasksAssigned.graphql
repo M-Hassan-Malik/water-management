@@ -1,0 +1,79 @@
+# Find All the tasks
+query TrackAllTasks($creatorId: ID!, $tableFilters: InputTableFilter) {
+  trackAllTasks(creatorId: $creatorId, tableFilters: $tableFilters) {
+    _id
+    title
+    detail
+    media
+    taskId
+    createdAt
+    deadline
+    scheduleType
+    submissions {
+      _id
+      date
+      subtasks {
+        detail
+        completed
+      }
+      media
+      voice
+      status
+    }
+    userId {
+      _id
+      first_name
+      last_name
+    }
+    assignedToFacilityRef {
+      _id
+      facility
+    }
+    createdBy_id {
+      _id
+      first_name
+      last_name
+    }
+  }
+}
+
+
+# Find the task that is Assigned to A specific user
+query FindAssignedTaskById($assignedTaskId: ID!) {
+  findAssignedTaskById(assignedTaskId: $assignedTaskId) {
+    _id
+    title
+    detail
+    media
+    submissions {
+      subtasks {
+        detail
+        completed
+      }
+      _id
+      date
+      remarks
+      media
+      voice
+      status
+    }
+    userId {
+      _id
+      first_name
+      photo_url
+      last_name
+    }
+    assignedToFacilityRef {
+      _id
+      facility
+    }
+    createdBy_id {
+      _id
+      first_name
+      last_name
+    }
+    scheduleType
+    taskId
+    deadline
+  }
+}

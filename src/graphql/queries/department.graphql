@@ -1,0 +1,30 @@
+query FindAllDepartments {
+  findAllDepartments {
+    _id
+    name
+    active
+    createdBy
+
+  }
+}
+
+# Find employee's department by his/her ID
+query FindDepartmentById($departmentId: ID!) {
+  findDepartmentById(departmentId: $departmentId) {
+    _id
+    name
+    active
+    createdBy
+  }
+}
+
+
+# Find All related employees of an owner of water park
+query FindDepartmentsByOwnerId($clientAdminId: ID!, $filter: InputTableFilter) {
+  findDepartmentsByOwnerId(clientAdminId: $clientAdminId, filter: $filter) {
+    _id
+    department
+    status
+    createdOn
+  }
+}

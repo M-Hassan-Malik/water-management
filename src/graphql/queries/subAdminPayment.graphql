@@ -1,0 +1,39 @@
+query FindAllSubAdminPayments {
+  findAllSubAdminPayments {
+    _id
+    user_id {
+      _id
+      first_name
+      last_name
+    }
+    package_type
+    subscription_date
+    last_payment_date
+    next_payment_date
+    current_status
+    amount
+  }
+}
+
+query FindSubAdminPaymenteById($findSubAdminPaymenteByIdId: ID!) {
+  findSubAdminPaymenteById(id: $findSubAdminPaymenteByIdId) {
+    _id
+    user_id {
+      _id
+      first_name
+      last_name
+    }
+    package_type
+    subscription_date
+    last_payment_date
+    next_payment_date
+    current_status
+    amount
+  }
+}
+
+query GetClientSecret($input: GetClientSecretInput) {
+  getClientSecret(input: $input) {
+    clientSecret
+  }
+}

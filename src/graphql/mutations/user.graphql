@@ -1,0 +1,17 @@
+# Update Admin User
+mutation UpdateAdminUser($updateAdminUserInput: InputUser!) {
+  updateAdminUser(updateAdminUserInput: $updateAdminUserInput)
+}
+
+mutation DeleteAdminUser($deleteAdminUserId: ID!) {
+  deleteAdminUser(id: $deleteAdminUserId)
+}
+
+mutation UpdateProfile($updateProfileUpdateProfileInput: UpdateProfileInput!) {
+  updateProfile(updateProfileInput: $updateProfileUpdateProfileInput)
+}
+
+#Updates particular fields of user document
+mutation UpdateUserFields($updateUserFieldsInput: UpdateUserFieldsInput!) {
+  updateUserFields(updateUserFieldsInput: $updateUserFieldsInput)
+}

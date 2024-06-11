@@ -1,0 +1,52 @@
+# Get Training by ID
+query GetTrainingById($trainingId: ID!) {
+  getTrainingById(trainingId: $trainingId) {
+    _id
+    title
+    facility {
+      _id
+      facility
+    }
+    sessions {
+      detail
+      image {
+        complete
+        data
+      }
+      video {
+        complete
+        data
+      }
+    }
+    createdBy {
+      _id
+      first_name
+      last_name
+    }
+    createdAt
+  }
+}
+
+query GetMyTrainings($creatorId: ID!) {
+  getMyTrainings(creatorId: $creatorId) {
+    _id
+    title
+    createdAt
+    createdBy {
+      _id
+      first_name
+      last_name
+    }
+    sessions {
+      detail
+      image {
+        data
+        complete
+      }
+       video {
+        data
+        complete
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+# Add/Create Employee
+mutation CreateEmployee($employeeInput: EmployeeInput!, $company: CompanyInput) {
+  createEmployee(employeeInput: $employeeInput, company: $company)
+}
+
+# Update Employee
+mutation UpdateEmployee($updateEmployeeInput: UpdateEmployeeInput!) {
+  updateEmployee(updateEmployeeInput: $updateEmployeeInput) {
+    _id
+    first_name
+    last_name
+    email
+    photo_url
+    phone {
+      phoneNo
+      code
+    }
+    password
+    admin
+    active
+    department
+    created_by
+    company {
+      _id
+      employee
+      employeeType
+      park {
+        _id
+      }
+      subAdmin
+      location {
+        _id
+      }
+    }
+  }
+}
+
+# Delete Employee
+mutation DeleteEmployee($employeeId: ID!) {
+  deleteEmployee(employeeId: $employeeId)
+}

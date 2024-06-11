@@ -1,0 +1,4 @@
+# Modifying User Package
+mutation ModifyPackage($userPackageModifyInput: UserPackageModifyInput!) {
+  modifyPackage(userPackageModifyInput: $userPackageModifyInput)
+}

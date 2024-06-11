@@ -1,0 +1,175 @@
+query users {
+  users {
+    first_name
+    last_name
+    email
+    rec_email
+    photo_url
+    phone {
+      code
+      phoneNo
+    }
+    scopes
+    admin
+    active
+  }
+}
+
+query UserById($userByIdId: String!) {
+  userById(id: $userByIdId) {
+    _id
+    themeId
+    first_name
+    last_name
+    email
+    access
+    stripeCustomerId
+    rec_email
+    photo_url
+    scopes
+    operations {
+      name
+      views
+    }
+    modules {
+      name
+      views
+    }
+     role {
+    _id
+    name
+    active
+    user_id
+      modules {
+      name
+      views
+    }
+    operations {
+        name
+        views
+      }
+     }
+    admin
+    active
+    created_by
+    belongsTo
+  company {
+      _id
+    employee
+    employeeType
+    park {
+      _id
+      locations {
+        _id
+        facility
+        address
+        city
+        state
+        GPS {
+          lat
+          lng
+        }
+        country
+        active
+      }
+      name
+      logo
+    }
+    subAdmin
+    location {
+      _id
+      facility
+      active
+      city
+      state
+      country
+      address
+      GPS {
+        lat
+        lng
+      }
+    }
+  }
+    package {
+      _id
+      paid
+      title
+      cost
+      sizeInGB
+      duration
+      description
+      number_of_users
+      discount_type
+      discount
+      paymentDetail {
+        amount
+        method
+      }
+      status
+      active
+      createdAt
+      modules {
+      name
+      views
+      }  
+    }
+    department
+    
+    phone {
+      phoneNo
+      code
+    }
+    created_by
+  }
+}
+
+# To Get Users for Manage Users Operation
+query FindRelatingUsers($findRelatingUsersId: ID!, $filter: InputTableFilter) {
+  findRelatingUsers(id: $findRelatingUsersId, filter: $filter) {
+  _id
+  name
+  email
+  role
+  action {
+    edit
+    view
+    delete
+  }
+  status
+  createdOn
+  }
+}
+
+# To Get List of Sub Admins & Sub Admin's Users
+query GetSubAdminList($getSubAdminListId: ID!, $filter: InputTableFilter) {
+  getSubAdminList(id: $getSubAdminListId, filter: $filter) {
+    _id
+    name
+    package
+    payment
+    account
+    action {
+      view
+      edit
+      delete
+    }
+  }
+}
+
+# To Get List All Sub Users
+query FindMyUsers($ownerId: ID!, $facilityId: ID) {
+  findMyUsers(ownerId: $ownerId, facilityId: $facilityId) {
+    _id
+    first_name
+    liveLocation {
+      lat
+      lng
+    }
+    company {
+      employeeType
+    }
+    last_name
+    email
+    status: active
+  }
+}

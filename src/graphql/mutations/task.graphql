@@ -1,0 +1,44 @@
+# Add Task
+mutation CreateTask($taskInput: TaskInput!) {
+  createTask(taskInput: $taskInput){
+    data
+    message
+    status
+  }
+}
+
+# Update Task By it's ID
+mutation UpdateTask($taskInput: TaskUpdateInput!) {
+  updateTask(taskInput: $taskInput) {
+    status
+    message
+    data
+  }
+}
+
+# Delete Task By it's ID
+mutation DeleteTask($taskId: ID!) {
+  deleteTask(taskId: $taskId)
+}
+
+# Assign to users/facility
+mutation AssignTask($taskAssignInput: AssignInput!) {
+  assignTask(taskAssignInput: $taskAssignInput){
+    data
+    message
+    status
+  }
+}
+
+# Approve a completed/in-review task
+mutation ApproveSubmission($submissionId: ID!, $taskId: ID!, $approverId: ID!) {
+  approveSubmission(
+    submissionId: $submissionId
+    taskId: $taskId
+    approverId: $approverId
+  ) {
+    status
+    message
+    data
+  }
+}

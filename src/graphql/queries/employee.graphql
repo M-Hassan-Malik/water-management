@@ -1,0 +1,86 @@
+query FindAllEmployees($createdById: ID!, $filter: InputTableFilter) {
+  findAllEmployees(createdById: $createdById, filter: $filter) {
+    _id
+    first_name
+    last_name
+    email
+    rec_email
+    photo_url
+    phone {
+      phoneNo
+      code
+    }
+    scopes
+    password
+    admin
+    active
+    department
+    
+    created_by
+    company {
+      _id
+      employee
+      employeeType
+      park {
+        _id
+      }
+      subAdmin
+    }
+  }
+}
+
+query FindEmployeeById($findEmployeeByIdId: ID!) {
+  findEmployeeById(id: $findEmployeeByIdId) {
+    _id
+    first_name
+    last_name
+    email
+    access
+    photo_url
+    phone {
+      phoneNo
+      code
+    }
+    password
+    admin
+    active
+    department
+    created_by
+    role {
+      _id
+      name
+      active
+      operations {
+        name
+        views
+      }
+      modules {
+        name
+        views
+      }
+    }
+    modules {
+    name
+    views
+  }
+  operations {
+    name
+    views
+  }
+    company {
+      employee
+      employeeType
+      location {
+        _id
+        facility
+      }
+      subAdmin
+      park {
+        _id
+      }
+    }
+    package {
+      _id
+    }
+  }
+}

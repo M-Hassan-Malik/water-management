@@ -1,0 +1,50 @@
+#Get by Creator Id
+query GetEmailAndNotificationByCreatorId($creatorId: ID!, $filter: InputTableFilter) {
+  getEmailAndNotificationByCreatorId(creatorId: $creatorId, filter: $filter) {
+    _id
+    code
+    text
+    subject:title
+    type
+    date:createdAt
+  }
+}
+
+#Get by Document Id
+query GetEmailAndNotificationById($objectId: ID!) {
+  getEmailAndNotificationById(objectId: $objectId) {
+    _id
+    text
+    title
+    type
+    code
+    date:createdAt
+    createdByRef {
+      _id
+    }
+  }
+}
+
+#Get User's Notification
+query GetUserNotifications($userId: ID!) {
+  getUserNotifications(userId: $userId) {
+    _id
+    code
+    type
+    title
+    text
+    priority
+    read
+    createdAt
+    assignedUserRef {
+      _id
+      first_name
+      last_name
+    }
+    createdByRef {
+      _id
+         first_name
+      last_name
+    }
+  }
+}

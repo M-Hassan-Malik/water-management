@@ -1,0 +1,19 @@
+# Create
+mutation AddRole($roleInput: RoleInput!) {
+  addRole(roleInput: $roleInput) {
+    _id
+    name
+    active
+    user_id
+  }
+}
+
+# Update
+mutation UpdateRole($roleUpdateInput: RoleUpdateInput!) {
+  updateRole(roleUpdateInput: $roleUpdateInput)
+}
+
+# Delete
+mutation DeleteRole($deleteRoleId: ID!) {
+  deleteRole(id: $deleteRoleId)
+}

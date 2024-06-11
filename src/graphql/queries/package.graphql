@@ -1,0 +1,41 @@
+query FindAllPackages {
+  findAllPackages {
+    _id
+    title
+    annual
+    modules {
+      name
+      views
+    }
+    cost
+    sizeInGB
+    duration
+    description
+    compare_at
+    active
+    discount
+    number_of_users
+    discount_type
+  }
+}
+
+query FindPackageById($packageId: ID!) {
+  findPackageById(PackageId: $packageId) {
+    _id
+    title
+    annual
+    modules {
+      name
+      views
+    }
+    cost
+    sizeInGB
+    duration
+    compare_at
+    description
+    active
+    discount
+    number_of_users
+    discount_type
+  }
+}
