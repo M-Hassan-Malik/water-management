@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3IYGbZeX1OQhCg3vzNy-9P7syNKqyPDc",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "ellis-docs-b5456.firebaseapp.com",
   projectId: "ellis-docs-b5456",
   storageBucket: "ellis-docs-b5456.appspot.com",

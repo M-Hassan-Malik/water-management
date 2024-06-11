@@ -3,6 +3,7 @@
 const environmentVariables = {
   VAPID_KEY: process.env.VAPID_KEY,
   SERVER_KEY: process.env.SERVER_KEY,
+  FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
   JWT_SECRET: process.env.JWT_SECRET,
   FRONT_END_URL: process.env.FRONT_END_URL,
   MONGO_URL: process.env.MONGO_URL,

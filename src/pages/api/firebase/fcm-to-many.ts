@@ -3,8 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const serverKey =
-      "AAAAhpWHi6U:APA91bFcEcIWIEFm5y7fy01FNEc1Kgy2VwHPGkBptEWWnAFHw40DWiQVkzyGzzVFUC4_tJdFKJcT5fQBEuL4ka1Z3ZvXtU04tkrH3iKkb8ZsyZMR48RVJqkg1M-TZ_AzOfW7Y9o78h0L";
+    const serverKey = process.env.SERVER_KEY;
     const headers = {
       Authorization: `key=${serverKey}`,
       "Content-Type": "application/json",
